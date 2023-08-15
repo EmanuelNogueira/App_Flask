@@ -1,0 +1,47 @@
+{% extends "template.html" %} {% block conteudo %}
+<div class="container">
+  <a href="{{ url_for('home') }}">
+    <button class="btn btn-primary button-list">Voltar</button>
+  </a>
+  <div class="page-header">
+    <h1>{{ titulo }}</h1>
+  </div>
+  <form action="{{ url_for('criar')}}" method="post">
+    <fieldset>
+      <div class="form-group">
+        <label for="problema">Problema</label>
+        <input
+          type="text"
+          name="problema"
+          id="problema"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="setor">Setor</label>
+        <input
+          type="text"
+          name="setor"
+          id="setor"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input
+          type="text"
+          name="descricao"
+          id="descricao"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary btn-salvar">
+        Adicionar nova lista
+      </button>
+    </fieldset>
+  </form>
+</div>
+{% endblock %}
